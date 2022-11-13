@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ-IU</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <br>
+
+    <hr><h2><b><hr> Enter your Bio Data<hr></b></h2>
+
+    <br>
+    <input type="text" placeholder="enter your 1st name" id="myInput1">
+    <br>
+    <br>
+    <input type="text" placeholder="enter your 2nd name" id="myInput2">
+    <br>
+    <br>
+    <input type="number" placeholder="enter your age " id="myInput3">
+    <br>
+    <br>
+    <button type="button" id="myBtn1">Submit</button> 
+    <button type="button" id="myBtn2">Clear</button>
+
+    <script>
+        $(document).ready(function ()
+        {
+            // Get value on button click and show alert
+            //input1 and input2 take numeric validation 
+            $("#myBtn1").click(function () {
+                var inputVal1 = $("#myInput1").val();
+                var inputVal2 = $("#myInput2").val();
+                if ($.isNumeric(inputVal1) || $.isNumeric(inputVal2))
+                {
+                    alert("Only letter accepted in inputField1 and inputField2");
+                }
+                else
+                {
+                    alert("Letter Accepted Successfully");
+                }
+            });
+
+            // Clear value on button click
+            $("#myBtn2").click(function ()
+            {
+                $("#myInput1").val("");
+                $("#myInput2").val("");
+                $("#myInput3").val("");
+
+                alert("Succesfully Data Clear");
+            });
+        });
+    </script>
+    </body>
+</html>
